@@ -1,0 +1,26 @@
+package date.secondweek.day2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author When all else is lost the future still remains.
+ * @date 2021/6/8 - 10:05
+ **/
+
+//二叉树的中序遍历
+public class day2 {
+    public List<Integer> inorderTraversal(TreeNode root){
+        List<Integer> res = new ArrayList<Integer>();
+        inorder(root, res);
+        return res;
+    }
+    public void inorder(TreeNode root, List<Integer> res){
+        if (root == null){
+            return;
+        }
+        inorder(root.left, res);
+        res.add(root.val);
+        inorder(root.right, res);
+    }
+}
